@@ -21,57 +21,57 @@
       <th>strength</th>
       <th>traffic</td>
       <th>location</th>
-      <th>status</th>
+      <th>last update`</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>eduroam lib</td>
-      <td>9,562</td>
-      <td>68.81%</td>
-      <td>7,895</td>
+      <td>-30dB</td>
+      <td>34</td>
+      <td>n/a</td>
       <td>01:07</td>
     </tr>
     <tr>
       <td>eduroam cherry park</td>
-      <td>2,403</td>
-      <td>17.29%</td>
-      <td>2,046</td>
+      <td>-50dB</td>
+      <td>145</td>
+      <td>n/a</td>
       <td>00:59</td>
     </tr>
     <tr>
       <td>eduroam hall 7</td>
-      <td>1,089</td>
-      <td>2.63%</td>
-      <td>904</td>
+      <td>-69dB</td>
+      <td>22</td>
+      <td>n/a</td>
       <td>00:59</td>
     </tr>
     <tr>
       <td>Internet from the moon</td>
-      <td>366</td>
-      <td>2.63%</td>
-      <td>333</td>
+      <td>-88dB</td>
+      <td>0</td>
+      <td>n/a</td>
       <td>01:01</td>
     </tr>
     <tr>
       <td>jkuat wireless test</td>
-      <td>162</td>
-      <td>1.17%</td>
-      <td>112</td>
+      <td>-42dB</td>
+      <td>117</td>
+      <td>n/a</td>
       <td>00:58</td>
     </tr>
     <tr>
       <td>eduroam pavilion</td>
-      <td>103</td>
-      <td>0.74%</td>
-      <td>87</td>
+      <td>-90dB</td>
+      <td>5</td>
+      <td>n/a</td>
       <td>01:22</td>
     </tr>
     <tr>
       <td>scc 105</td>
-      <td>98</td>
-      <td>0.71%</td>
-      <td>69</td>
+      <td>-40dB</td>
+      <td>19</td>
+      <td>n/a</td>
       <td>01:18</td>
     </tr>
   </tbody>
@@ -96,3 +96,28 @@
 
 </body>
 </html>
+
+<?php
+$servername = "localhost";
+$username = "id16028170_root";
+$password = "9$nA^3o9F&7Z!6";
+$dbname = "id16028170_membersdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+
+?>
